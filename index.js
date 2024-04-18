@@ -1,9 +1,9 @@
 const express = require('express')
 const cors = require('cors')
-const config = require('./db/config')
+require('./db/config')
 const Products = require('./db/Products')
 const User = require('./db/User')
-
+const PORT = process.env.PORT || 6060
 const Jwt = require('jsonwebtoken')
 const jwtkey = 'ecommerce'
 
@@ -123,7 +123,6 @@ function verifyToken(req, resp, next){
    
 }
 
-const port = config.port
-app.listen(port)
+app.listen(PORT)
 
 
